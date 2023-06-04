@@ -48,9 +48,7 @@ contract ArtCenterDAO {
             proposal.executed = true;
             emit ProposalExecuted(proposalId);
 
-            // Execute proposal here
-            // For example, transfer funds to the art center's account
-            // Or, arrange for a new exhibit to be displayed at the center
+           
         }
     }
 
