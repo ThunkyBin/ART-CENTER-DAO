@@ -1,7 +1,10 @@
-To use this smart contract for an art center located in Istanbul Beyoğlu, the contract needs to be deployed to a blockchain that supports smart contracts. Once the contract is deployed, members can interact with the contract through a user interface that is built on top of the contract.
+To use this smart contract for an art center located in Istanbul Beyoğlu, the contract needs to be deployed to a blockchain that supports smart contracts.
+Once the contract is deployed, members can interact with the contract through a user interface that is built on top of the contract.
 
-To submit a proposal, a member can call the submitProposal function and provide a string description of their proposal. Other members of the DAO can then vote on the proposal using the voteProposal function.
+To submit a proposal, a member can call the submitProposal function and provide a string description of their proposal.
+Other members of the DAO can then vote on the proposal using the voteProposal function.
 
-If a proposal receives more votes in favor than against, it can be executed using the executeProposal function. The proposal can then be acted upon, for example, by transferring funds to the art center's account or arranging for a new exhibit to be displayed at the center.
+If a proposal receives more votes in favor than against, it can be executed using the executeProposal function.
+The proposal can then be acted upon, for example, by transferring funds to the art center's account or arranging for a new exhibit to be displayed at the center.
 
 Members can also contribute funds to the DAO using the contribute function and withdraw funds from the DAO using the withdrawFunds function.
