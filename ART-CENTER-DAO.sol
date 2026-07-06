@@ -19,6 +19,7 @@ contract ArtCenterDAO {
     event ProposalSubmitted(uint256 proposalId, string description);
     event Voted(uint256 proposalId, bool vote, uint256 votesFor, uint256 votesAgainst);
     event ProposalExecuted(uint256 proposalId);
+    event ContributionReceived(address indexed contributor, uint256 amount);
     event FundsWithdrawn(uint256 amount);
 
     function submitProposal(string memory proposalDescription) public {
@@ -79,8 +80,11 @@ contract ArtCenterDAO {
     }
 
     function contribute() public payable {
+        require(msg.value > 0, "Contribution must be greater than zero");
+
         balances[msg.sender] += msg.value;
         totalContributions += msg.value;
+        emit ContributionReceived(msg.sender, msg.value);
     }
 
     function withdrawFunds(uint256 amount) public {
