@@ -11,6 +11,7 @@ contract ArtCenterDAO {
     }
 
     mapping(uint256 => Proposal) public proposals;
+    mapping(uint256 => mapping(address => bool)) public hasVoted;
     uint256 public proposalCount;
     uint256 public totalContributions;
     mapping(address => uint256) public balances;
@@ -30,6 +31,9 @@ contract ArtCenterDAO {
         require(proposalId < proposalCount, "Invalid proposal ID");
         Proposal storage proposal = proposals[proposalId];
         require(!proposal.executed, "Proposal already executed");
+        require(!hasVoted[proposalId][msg.sender], "Already voted");
+
+        hasVoted[proposalId][msg.sender] = true;
 
         if (vote) {
             proposal.votesFor++;
